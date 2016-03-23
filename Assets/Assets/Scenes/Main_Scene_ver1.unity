@@ -558,9 +558,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -2.0340629, y: 0.0014522284}
+  m_Offset: {x: -2.0340629, y: -0.01663576}
   serializedVersion: 2
-  m_Size: {x: 0.35187307, y: 0.8651193}
+  m_Size: {x: 0.35187307, y: 0.8289434}
 --- !u!82 &690286334
 AudioSource:
   m_ObjectHideFlags: 0
@@ -803,9 +803,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -2.2611527, y: -0.021906989}
+  m_Offset: {x: -2.2660499, y: -0.031718224}
   serializedVersion: 2
-  m_Size: {x: 0.42508087, y: 0.8382957}
+  m_Size: {x: 0.41528532, y: 0.8382958}
 --- !u!82 &949317981
 AudioSource:
   m_ObjectHideFlags: 0
