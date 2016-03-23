@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 37f5730fc99bbdb48af9713fc3dad94f
+timeCreated: 1456855334
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Imported piskel_0
+    21300002: Imported piskel_1
+    21300004: Imported piskel_2
+    21300006: Imported piskel_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Imported piskel_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 376
+        width: 477
+        height: 449
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.800003, y: -143.36}
+        - {x: 153.2, y: -143.36}
+        - {x: 153.2, y: -106.36}
+        - {x: 106.2, y: -88.36}
+        - {x: 75.2, y: -45.36}
+        - {x: 132.2, y: 10.639999}
+        - {x: 136.2, y: 63.64}
+        - {x: 109.2, y: 115.64}
+        - {x: 93.2, y: 141.64}
+        - {x: 65.2, y: 144.64}
+        - {x: -74.8, y: 144.64}
+        - {x: -96.8, y: 117.64}
+        - {x: -93.8, y: -8.360001}
+        - {x: -121.8, y: -8.360001}
+        - {x: -152.8, y: -68.36}
+        - {x: -152.8, y: -143.36}
+        - {x: -132.8, y: -143.36}
+        - {x: -132.8, y: -142.36}
+        - {x: -70.8, y: -127.36}
+        - {x: -68.8, y: -125.36}
+    - name: Imported piskel_1
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 368
+        width: 502
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 161.35999, y: -108.98001}
+        - {x: 102.359985, y: -81.98001}
+        - {x: 76.359985, y: -26.980011}
+        - {x: 99.359985, y: 15.019989}
+        - {x: 102.359985, y: 130.01999}
+        - {x: 72.359985, y: 146.01999}
+        - {x: -48.640015, y: 146.01999}
+        - {x: -49.640015, y: 145.01999}
+        - {x: -111.640015, y: 122.01999}
+        - {x: -140.64001, y: 15.019989}
+        - {x: -160.64001, y: -12.980011}
+        - {x: -160.64001, y: -48.98001}
+        - {x: -159.64001, y: -49.98001}
+        - {x: -113.640015, y: -111.98001}
+        - {x: -111.640015, y: -113.98001}
+        - {x: -98.640015, y: -143.98001}
+        - {x: -97.640015, y: -144.98001}
+        - {x: 161.35999, y: -144.98001}
+    - name: Imported piskel_2
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 374
+        width: 452
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.2800293, y: -126.14}
+        - {x: 79.28003, y: -113.14}
+        - {x: 128.28003, y: -113.14}
+        - {x: 145.28003, y: -96.14}
+        - {x: 145.28003, y: -30.14}
+        - {x: 144.28003, y: -29.14}
+        - {x: 95.28003, y: -29.14}
+        - {x: 93.28003, y: -31.14}
+        - {x: 75.28003, y: 53.86}
+        - {x: 69.28003, y: 130.86}
+        - {x: 20.28003, y: 144.86}
+        - {x: -98.71997, y: 144.86}
+        - {x: -130.71997, y: 112.86}
+        - {x: -130.71997, y: 16.86}
+        - {x: -144.71997, y: -101.14}
+        - {x: -144.71997, y: -131.14}
+        - {x: -129.71997, y: -144.14}
+        - {x: -94.71997, y: -144.14}
+        - {x: -93.71997, y: -143.14}
+        - {x: -82.71997, y: -144.14}
+        - {x: 2.2800293, y: -144.14}
+    - name: Imported piskel_3
+      rect:
+        serializedVersion: 2
+        x: 2402
+        y: 370
+        width: 455
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34.279907, y: -143.70001}
+        - {x: 146.2799, y: -4.700012}
+        - {x: 146.2799, y: 141.29999}
+        - {x: 128.2799, y: 146.29999}
+        - {x: 8.279907, y: 146.29999}
+        - {x: -49.720093, y: 117.29999}
+        - {x: -79.72009, y: 67.29999}
+        - {x: -74.72009, y: 146.29999}
+        - {x: -135.7201, y: 146.29999}
+        - {x: -145.7201, y: 134.29999}
+        - {x: -145.7201, y: 76.29999}
+        - {x: -132.7201, y: 62.299988}
+        - {x: -96.72009, y: 45.299988}
+        - {x: -84.72009, y: -19.700012}
+        - {x: -101.72009, y: -93.70001}
+        - {x: -98.72009, y: -144.70001}
+        - {x: -78.72009, y: -144.70001}
+        - {x: -77.72009, y: -143.70001}
+        - {x: -65.72009, y: -144.70001}
+        - {x: 33.279907, y: -144.70001}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
