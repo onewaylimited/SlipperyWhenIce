@@ -79,6 +79,7 @@ public class PlayerScript : MonoBehaviour {
     void FixedUpdate()
     {
         GetComponent<Rigidbody2D>().AddForce(movement);
+        GetComponent<Rigidbody2D>().AddForce(GetComponent<Rigidbody2D>().velocity * -.2f);
     }
 
     /// <summary>
