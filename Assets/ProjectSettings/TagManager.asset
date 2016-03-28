@@ -9,6 +9,7 @@ TagManager:
   - goal
   - Home
   - Away
+  - Goalie
   layers:
   - Default
   - TransparentFX
