@@ -78,7 +78,8 @@ public class PlayerScript : MonoBehaviour {
     }
     void FixedUpdate()
     {
-        GetComponent<Rigidbody2D>().velocity = movement;
+        GetComponent<Rigidbody2D>().AddForce(movement);
+        GetComponent<Rigidbody2D>().AddForce(GetComponent<Rigidbody2D>().velocity * -.2f);
     }
 
     /// <summary>
@@ -151,6 +152,7 @@ public class PlayerScript : MonoBehaviour {
         ballScript.setFollow(false);
 
         // Add force to ball
+        ball.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
         ball.GetComponent<Rigidbody2D>().AddForce(direction);
 
         ball = null;
