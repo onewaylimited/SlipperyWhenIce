@@ -27,7 +27,7 @@ public class PlayerScript : MonoBehaviour {
 
     public BallScript ballScript;
 
-    public GameObject[] players = new GameObject[2];
+    public PlayerScript aiPlayer;
 	// Use this for initialization
 	void Start () {
         // Flip player to face correct direction at start of match
@@ -74,11 +74,6 @@ public class PlayerScript : MonoBehaviour {
             ySpeed * inY
         );
 
-        if (Input.GetButtonDown(playerSwitch)) {
-            SwitchPlayers();
-            print("Switch Players");
-        }
-
         // Mouse Support
         if (Input.GetMouseButtonDown(0) && hasPossession) {
             Shoot(ball);
@@ -99,7 +94,7 @@ public class PlayerScript : MonoBehaviour {
     /// </summary>
     public void SwitchPlayers() {
         setControl(false);
-        players[1].GetComponent<PlayerScript>().setControl(true);
+        aiPlayer.setControl(true);
     }
 
     /// <summary>
@@ -108,10 +103,16 @@ public class PlayerScript : MonoBehaviour {
     /// <param name="control"></param>
     public void setControl(bool control) {
         controlling = control;
+        print("Set control to: " + control);
     }
 
     void FixedUpdate()
     {
+        if (Input.GetButton(playerSwitch)) {
+            SwitchPlayers();
+            print("Switch Players");
+        }
+
         GetComponent<Rigidbody2D>().AddForce(movement);
         GetComponent<Rigidbody2D>().AddForce(GetComponent<Rigidbody2D>().velocity * -.2f);
     }
