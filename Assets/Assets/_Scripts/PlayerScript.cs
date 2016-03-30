@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
 
+    public string name = " ";
     public int xSpeed = 3;
     public int ySpeed = 3;
     private Vector3 mouse;
@@ -28,6 +29,7 @@ public class PlayerScript : MonoBehaviour {
     public BallScript ballScript;
 
     public PlayerScript aiPlayer;
+
 	// Use this for initialization
 	void Start () {
         // Flip player to face correct direction at start of match
@@ -40,6 +42,10 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (Input.GetButtonUp(playerSwitch) && controlling) {
+            SwitchPlayers();
+        }
+
         if (controlling) {
             PlayerMove();
         }
@@ -93,6 +99,7 @@ public class PlayerScript : MonoBehaviour {
     /// Switch players automatically
     /// </summary>
     public void SwitchPlayers() {
+        print("Switching called by: " + name);
         setControl(false);
         aiPlayer.setControl(true);
     }
@@ -103,16 +110,10 @@ public class PlayerScript : MonoBehaviour {
     /// <param name="control"></param>
     public void setControl(bool control) {
         controlling = control;
-        print("Set control to: " + control);
     }
 
     void FixedUpdate()
     {
-        if (Input.GetButton(playerSwitch)) {
-            SwitchPlayers();
-            print("Switch Players");
-        }
-
         GetComponent<Rigidbody2D>().AddForce(movement);
         GetComponent<Rigidbody2D>().AddForce(GetComponent<Rigidbody2D>().velocity * -.2f);
     }
