@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour {
     public string rxAxis = "P1SX";
     public string ryAxis = "P1SY";
     public string playerSwitch = "P1SWITCH";
+    public string shoot = "P1SHOOT";
 
     // Around 200-250 good range for this
     public float shotStrength = 200;
@@ -30,6 +31,8 @@ public class PlayerScript : MonoBehaviour {
 
     public PlayerScript aiPlayer;
 
+    private bool switchPlayers = false;
+
 	// Use this for initialization
 	void Start () {
         // Flip player to face correct direction at start of match
@@ -42,10 +45,6 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetButtonUp(playerSwitch) && controlling) {
-            SwitchPlayers();
-        }
-
         if (controlling) {
             PlayerMove();
         }
@@ -80,13 +79,17 @@ public class PlayerScript : MonoBehaviour {
             ySpeed * inY
         );
 
+        if (Input.GetButtonUp(playerSwitch) && controlling) {
+            switchPlayers = true;
+        }
+
         // Mouse Support
         if (Input.GetMouseButtonDown(0) && hasPossession) {
             Shoot(ball);
         }
 
         // JoyStick Support
-        if (Input.GetButtonDown("Shoot") && hasPossession) {
+        if (Input.GetButtonDown(shoot) && hasPossession) {
             JoystickShoot(ball);
         }
     }
@@ -102,6 +105,7 @@ public class PlayerScript : MonoBehaviour {
         print("Switching called by: " + name);
         setControl(false);
         aiPlayer.setControl(true);
+        movement = Vector2.zero;
     }
 
     /// <summary>
@@ -114,6 +118,10 @@ public class PlayerScript : MonoBehaviour {
 
     void FixedUpdate()
     {
+        if (switchPlayers) {
+            SwitchPlayers();
+            switchPlayers = !switchPlayers;
+        }
         GetComponent<Rigidbody2D>().AddForce(movement);
         GetComponent<Rigidbody2D>().AddForce(GetComponent<Rigidbody2D>().velocity * -.2f);
     }

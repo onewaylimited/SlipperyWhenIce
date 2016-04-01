@@ -667,6 +667,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+      propertyPath: shoot
+      value: P2SHOOT
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
   m_IsPrefabParent: 0
@@ -1495,6 +1499,10 @@ Prefab:
     - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+      propertyPath: shoot
+      value: P2SHOOT
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
