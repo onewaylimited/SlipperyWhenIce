@@ -11,6 +11,10 @@ public class RinkScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        string[] inputs = Input.GetJoystickNames();
+        for(int i = 0; i < inputs.Length; i++) {
+            print(inputs[i]);
+        }
         Away = GameObject.FindGameObjectWithTag("Away").GetComponent<Text>(); 
         Home = GameObject.FindGameObjectWithTag("Home").GetComponent<Text>();
         audio = GetComponent<AudioSource>();

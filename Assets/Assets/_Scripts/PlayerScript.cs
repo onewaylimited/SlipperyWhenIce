@@ -3,16 +3,21 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
 
-    public int xSpeed = 5;
-    public int ySpeed = 5;
+    public string name = " ";
+    public int xSpeed = 3;
+    public int ySpeed = 3;
     private Vector3 mouse;
     public string xaxis = "P1X";
     public string yaxis = "P1Y";
     public string rxAxis = "P1SX";
     public string ryAxis = "P1SY";
+    public string playerSwitch = "P1SWITCH";
+    public string shoot = "P1SHOOT";
 
     // Around 200-250 good range for this
     public float shotStrength = 200;
+
+    public bool controlling = true;
     
     private Vector2 movement;
     public bool facingRight;
@@ -23,10 +28,11 @@ public class PlayerScript : MonoBehaviour {
     public BoxCollider2D boxCollider;
 
     public BallScript ballScript;
-    //public Vector3 worldPos;
-   // public Vector3 ballPos;
-    //public Vector3 shoot;
-    
+
+    public PlayerScript aiPlayer;
+
+    private bool switchPlayers = false;
+
 	// Use this for initialization
 	void Start () {
         // Flip player to face correct direction at start of match
@@ -39,8 +45,23 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        mouse = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 15));
+        if (controlling) {
+            PlayerMove();
+        }
+        else {
+            AIMove();
+        }
+    }
+    /// <summary>
+    /// Creates movement vector for AI player
+    /// </summary>
+    public void AIMove() {
 
+    }
+    /// <summary>
+    /// Creates movement vector based on player input
+    /// </summary>
+    public void PlayerMove() {
         // Get input from joysticks
         float inX = Input.GetAxis(xaxis);
         float inY = Input.GetAxis(yaxis);
@@ -49,35 +70,58 @@ public class PlayerScript : MonoBehaviour {
         if (inX < 0 && facingRight) {
             Flip();
         }
-        else if(inX > 0 && !facingRight) {
+        else if (inX > 0 && !facingRight) {
             Flip();
         }
 
         movement = new Vector2(
             xSpeed * inX,
-            ySpeed * inY    
+            ySpeed * inY
         );
-  
+
+        if (Input.GetButtonUp(playerSwitch) && controlling) {
+            switchPlayers = true;
+        }
+
         // Mouse Support
-        if (Input.GetMouseButtonDown(0) && hasPossession)
-        {
+        if (Input.GetMouseButtonDown(0) && hasPossession) {
             Shoot(ball);
         }
 
         // JoyStick Support
-        if (Input.GetButtonDown("Shoot") && hasPossession) {
+        if (Input.GetButtonDown(shoot) && hasPossession) {
             JoystickShoot(ball);
         }
-        //worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 15));
-        //ballPos = ball.GetComponent<Transform>().position;
-       // shoot = worldPos - ballPos;
     }
     public bool getBool()
     {
             return facingRight;
     }
+
+    /// <summary>
+    /// Switch players automatically
+    /// </summary>
+    public void SwitchPlayers() {
+        print("Switching called by: " + name);
+        setControl(false);
+        aiPlayer.setControl(true);
+        movement = Vector2.zero;
+    }
+
+    /// <summary>
+    /// Change the controlling boolean
+    /// </summary>
+    /// <param name="control"></param>
+    public void setControl(bool control) {
+        controlling = control;
+    }
+
     void FixedUpdate()
     {
+        if (switchPlayers) {
+            SwitchPlayers();
+            switchPlayers = !switchPlayers;
+        }
         GetComponent<Rigidbody2D>().AddForce(movement);
         GetComponent<Rigidbody2D>().AddForce(GetComponent<Rigidbody2D>().velocity * -.2f);
     }
