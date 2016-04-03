@@ -7,7 +7,6 @@ public class Register : MonoBehaviour {
 
     public InputField usernameInput;
     public InputField passwordInput;
-    public Button loginButton;
 
     public void pressed() {
         string name = usernameInput.text;
@@ -41,7 +40,6 @@ public class Register : MonoBehaviour {
 
             if(download.text == "Account created") {
                 Debug.Log("Created account successfully");
-                // Uncomment this after i actually implement the login button
                 //loginButton.onClick.Invoke();
             }
         }
