@@ -78,6 +78,8 @@ public class Goalie_Script : MonoBehaviour
         {
             ball = null;
             dangerZone = false;
+            player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
         }
     }
     void Flip()
