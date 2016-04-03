@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour {
     public string ryAxis = "P1SY";
     public string playerSwitch = "P1SWITCH";
     public string shoot = "P1SHOOT";
+    public bool redTeam = true;
 
     // Around 200-250 good range for this
     public float shotStrength = 200;
@@ -40,6 +41,7 @@ public class PlayerScript : MonoBehaviour {
             Flip();
             facingRight = !facingRight;
         }
+        ballScript = ball.GetComponent<BallScript>();
     }
 	
 	// Update is called once per frame
@@ -56,14 +58,40 @@ public class PlayerScript : MonoBehaviour {
     /// Creates movement vector for AI player
     /// </summary>
     public void AIMove() {
-        movement = Vector2.ClampMagnitude(ball.transform.position - transform.position, 3);
+        // Face Player correct direction
         if (movement.x < 0 && facingRight) {
             Flip();
         }
         else if (movement.x > 0 && !facingRight) {
             Flip();
         }
-        print("Player " + name + " Pos: " + transform.position + " Ball Position: " + ball.transform.position + " Move Vector: " + movement);
+
+        // If nobody is in possesion, go for the ball
+        if (ballScript.playerInPossesion == null) {
+            movement = Vector2.ClampMagnitude(ball.transform.position - transform.position, 3);
+        }
+        else if (ballScript.playerInPossesion != otherPlayer && !hasPossession) {
+            movement = Vector2.ClampMagnitude(ball.transform.position - transform.position, 3);
+        }
+        else if (hasPossession) {
+            if(redTeam && otherPlayer.transform.position.x > transform.position.x) {
+                Vector2 shotDirection = Vector2.ClampMagnitude(otherPlayer.transform.position - transform.position, 1f);
+                print("Shot Direction = " + shotDirection);
+                Shoot(ball, shotDirection);
+            }
+            else if(otherPlayer.transform.position.x < transform.position.x) {
+                Vector2 shotDirection = Vector2.ClampMagnitude(otherPlayer.transform.position - transform.position, 1f);
+                print("Shot Direction = " + shotDirection);
+                Shoot(ball, shotDirection);
+            }
+            
+        }
+        else {
+            movement = Vector2.zero;  // If nothing else, stop moving
+        }
+       
+       
+        
     }
     /// <summary>
     /// Creates movement vector based on player input
@@ -183,6 +211,21 @@ public class PlayerScript : MonoBehaviour {
     }
 
     /// <summary>
+    /// Shoot function for ai 
+    /// </summary>
+    /// <param name="ball"></param>
+    /// <param name="direction"></param>
+    void Shoot(GameObject ball, Vector2 direction) {
+        direction *= (shotStrength * 50);
+
+        hasPossession = false;
+        ballScript.setFollow(false);
+
+        ball.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
+        ball.GetComponent<Rigidbody2D>().AddForce(direction);
+    }
+
+    /// <summary>
     /// Shooting function for controllers
     /// </summary>
     /// <param name="ball"></param>
@@ -205,8 +248,5 @@ public class PlayerScript : MonoBehaviour {
         // Add force to ball
         ball.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
         ball.GetComponent<Rigidbody2D>().AddForce(direction);
-
-        ball = null;
-       
     }
 }
