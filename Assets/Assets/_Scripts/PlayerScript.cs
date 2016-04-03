@@ -79,7 +79,7 @@ public class PlayerScript : MonoBehaviour {
                 print("Shot Direction = " + shotDirection);
                 Shoot(ball, shotDirection);
             }
-            else if(otherPlayer.transform.position.x < transform.position.x) {
+            else if(!redTeam && otherPlayer.transform.position.x < transform.position.x) {
                 Vector2 shotDirection = Vector2.ClampMagnitude(otherPlayer.transform.position - transform.position, 1f);
                 print("Shot Direction = " + shotDirection);
                 Shoot(ball, shotDirection);
