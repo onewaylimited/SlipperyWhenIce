@@ -29,7 +29,7 @@ public class PlayerScript : MonoBehaviour {
 
     public BallScript ballScript;
 
-    public PlayerScript aiPlayer;
+    public PlayerScript otherPlayer;
 
     private bool switchPlayers = false;
 
@@ -56,7 +56,14 @@ public class PlayerScript : MonoBehaviour {
     /// Creates movement vector for AI player
     /// </summary>
     public void AIMove() {
-
+        movement = Vector2.ClampMagnitude(ball.transform.position - transform.position, 3);
+        if (movement.x < 0 && facingRight) {
+            Flip();
+        }
+        else if (movement.x > 0 && !facingRight) {
+            Flip();
+        }
+        print("Player " + name + " Pos: " + transform.position + " Ball Position: " + ball.transform.position + " Move Vector: " + movement);
     }
     /// <summary>
     /// Creates movement vector based on player input
@@ -104,7 +111,7 @@ public class PlayerScript : MonoBehaviour {
     public void SwitchPlayers() {
         print("Switching called by: " + name);
         setControl(false);
-        aiPlayer.setControl(true);
+        otherPlayer.setControl(true);
         movement = Vector2.zero;
     }
 

@@ -285,6 +285,18 @@ Prefab:
       propertyPath: shoot
       value: P2SHOOT
       objectReference: {fileID: 0}
+    - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+      propertyPath: name
+      value: Blue_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+      propertyPath: otherPlayer
+      value: 
+      objectReference: {fileID: 2128967087}
+    - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1797311078}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
   m_IsPrefabParent: 0
@@ -515,6 +527,18 @@ Prefab:
       propertyPath: controlling
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+      propertyPath: name
+      value: Red_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+      propertyPath: otherPlayer
+      value: 
+      objectReference: {fileID: 763226719}
+    - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1797311078}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
   m_IsPrefabParent: 0
@@ -935,6 +959,18 @@ Prefab:
       propertyPath: aiPlayer
       value: 
       objectReference: {fileID: 341947124}
+    - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+      propertyPath: name
+      value: Red_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+      propertyPath: otherPlayer
+      value: 
+      objectReference: {fileID: 341947124}
+    - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1797311078}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
   m_IsPrefabParent: 0
@@ -1530,6 +1566,18 @@ Prefab:
       propertyPath: shoot
       value: P2SHOOT
       objectReference: {fileID: 0}
+    - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+      propertyPath: name
+      value: Blue_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+      propertyPath: otherPlayer
+      value: 
+      objectReference: {fileID: 197956827}
+    - target: {fileID: 11447170, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1797311078}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
   m_IsPrefabParent: 0
