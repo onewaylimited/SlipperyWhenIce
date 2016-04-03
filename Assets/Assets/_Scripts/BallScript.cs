@@ -8,7 +8,7 @@ public class BallScript : MonoBehaviour {
     Rigidbody2D rb;
     public bool inPossession;
     public float followSpeed = 4;
-    public PlayerScript play;
+    public PlayerScript playerInPossesion;
     private AudioSource source;
 
 
@@ -38,8 +38,8 @@ public class BallScript : MonoBehaviour {
         {
             inPossession = true;
             player = coll.gameObject;
-            play = (PlayerScript)player.GetComponent(typeof(PlayerScript));
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), play.boxCollider);  // Dont allow collisions with player box
+            playerInPossesion = (PlayerScript)player.GetComponent(typeof(PlayerScript));
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), playerInPossesion.boxCollider);  // Dont allow collisions with player box
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;  // Set velocity to zero once entered trigger
             followPlayer = true;
         }
@@ -51,14 +51,14 @@ public class BallScript : MonoBehaviour {
         {
             inPossession = false;
             player = null;
-            play = null;
+            playerInPossesion = null;
             followPlayer = false;
         }
     }
 
     void follow()
     {
-        if (play.getBool()) {
+        if (playerInPossesion.getBool()) {
             transform.position = new Vector3(player.GetComponent<Transform>().position.x + .5F, player.GetComponent<Transform>().position.y - .4F, player.GetComponent<Transform>().position.z);
         }
         else
