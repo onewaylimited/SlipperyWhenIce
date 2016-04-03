@@ -41,20 +41,20 @@ public class Goalie_Script : MonoBehaviour
             Block();
         }
 
-        if( player.transform.position.y > 1 || player.transform.position.y < -1 && facingRight)
+        if( (player.transform.position.y > 1 || player.transform.position.y < -1) && facingRight)
         {
             player.transform.position = goaliePos1;
         }
-        else if (player.transform.position.y > 1 || player.transform.position.y < -1 && !facingRight)
+        else if ((player.transform.position.y > 1 || player.transform.position.y < -1) && !facingRight)
         {
             player.transform.position = goaliePos2;
         }
 
-        if (player.transform.position.x < 8.8 || player.transform.position.x > 8.7 && facingRight)
+        if ((player.transform.position.x < 8.8 || player.transform.position.x > 8.7) && facingRight)
         {
             player.transform.position = goaliePos1;
         }
-        else if(player.transform.position.x < 9.55 || player.transform.position.x > 9.65 && !facingRight)
+        else if((player.transform.position.x < 9.55 || player.transform.position.x > 9.65) && !facingRight)
         {
             player.transform.position = goaliePos2;
         }
@@ -78,6 +78,8 @@ public class Goalie_Script : MonoBehaviour
         {
             ball = null;
             dangerZone = false;
+            player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
         }
     }
     void Flip()
