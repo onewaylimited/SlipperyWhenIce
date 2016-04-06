@@ -8,7 +8,7 @@ public class RinkScript : MonoBehaviour {
     public int hScore;
     public int aScore;
     private AudioSource audio;
-
+    private Vector3 ballPosition = new Vector3(.3106904F, -1F, -.1F);
 	// Use this for initialization
 	void Start () {
         string[] inputs = Input.GetJoystickNames();
@@ -40,7 +40,8 @@ public class RinkScript : MonoBehaviour {
                 aScore += 1;
                 Away.text = " " + aScore;
             }
-            //coll.gameObject.GetComponent<BallScript>().returnToCenter();
+            coll.gameObject.GetComponent<Transform>().position = ballPosition;
+            coll.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }
     }
 
