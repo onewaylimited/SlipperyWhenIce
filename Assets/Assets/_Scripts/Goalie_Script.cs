@@ -13,6 +13,7 @@ public class Goalie_Script : MonoBehaviour
     public bool facingRight = true;
     Vector3 goaliePos1 = new Vector3(-8.75F, -.7F, -.16F);
     Vector3 goaliePos2 = new Vector3(9.6F, -.7F, -.16F);
+    
     // Use this for initialization
     void Start()
     {
@@ -33,6 +34,7 @@ public class Goalie_Script : MonoBehaviour
         }
     }
 
+    
     // Update is called once per frame
     void Update()
     {
