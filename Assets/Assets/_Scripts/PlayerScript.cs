@@ -234,7 +234,7 @@ public class PlayerScript : MonoBehaviour {
         // Get Direction of Right Joystick
         float dirX = Input.GetAxis(rxAxis);
         float dirY = Input.GetAxis(ryAxis);
-
+        Debug.Log(" " + dirX + " " + dirY);
         // Create vector in direction of right jostick
         Vector2 direction = new Vector2(dirX, dirY);
 
