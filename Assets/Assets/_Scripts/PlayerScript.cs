@@ -13,7 +13,8 @@ public class PlayerScript : MonoBehaviour {
     public string ryAxis = "P1SY";
     public string playerSwitch = "P1SWITCH";
     public string shoot = "P1SHOOT";
-    public bool redTeam = true;
+    public bool redTeam;
+   
 
     // Around 200-250 good range for this
     public float shotStrength = 200;
@@ -25,6 +26,8 @@ public class PlayerScript : MonoBehaviour {
     public GameObject ball = null;
     public bool hasPossession;
     public float multiplier = 50;
+    public GameObject goal;
+    public Vector3 goalDist;
 
     public BoxCollider2D boxCollider;
 
@@ -41,11 +44,27 @@ public class PlayerScript : MonoBehaviour {
             Flip();
             facingRight = !facingRight;
         }
+        FindGoal();
+        goalDist = this.transform.position - goal.transform.position;
+        ball = GameObject.FindGameObjectsWithTag("ball")[0];
         ballScript = ball.GetComponent<BallScript>();
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    void FindGoal()
+    {
+        if (redTeam)
+        {
+            goal = GameObject.FindGameObjectsWithTag("RightGoal")[0];
+        }
+        //GameObject[] list = GameObject.FindGameObjectsWithTag("goal");
+        if(!redTeam)
+        {
+            goal = GameObject.FindGameObjectsWithTag("LeftGoal")[0];
+        }
+
+    }
+    // Update is called once per frame
+    void Update ()
     {
         if (controlling) {
             PlayerMove();
@@ -53,6 +72,9 @@ public class PlayerScript : MonoBehaviour {
         else {
             AIMove();
         }
+        goalDist = this.transform.position - goal.transform.position;
+        
+
     }
     /// <summary>
     /// Creates movement vector for AI player
@@ -89,9 +111,14 @@ public class PlayerScript : MonoBehaviour {
         else {
             movement = Vector2.zero;  // If nothing else, stop moving
         }
-       
-       
-        
+        //If in possession of ball, should shoot torward goal
+        if (hasPossession && (goalDist.magnitude < 3))
+        {
+            ShootAt(goal);
+        }
+
+
+
     }
     /// <summary>
     /// Creates movement vector based on player input
@@ -210,6 +237,14 @@ public class PlayerScript : MonoBehaviour {
         ball = null;
     }
 
+    void ShootAt(GameObject target)
+    {
+        Vector3 ballPos = ball.GetComponent<Transform>().position;
+        Vector3 goalPos = target.GetComponent<Transform>().position;
+        Vector3 shoot = shotStrength * 50 * (goalPos - ballPos);
+        ball.GetComponent<Rigidbody2D>().AddForce(shoot);
+        hasPossession = false;
+    }
     /// <summary>
     /// Shoot function for ai 
     /// </summary>
