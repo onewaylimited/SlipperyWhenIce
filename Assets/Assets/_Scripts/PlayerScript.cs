@@ -41,6 +41,7 @@ public class PlayerScript : MonoBehaviour {
             Flip();
             facingRight = !facingRight;
         }
+        ball = GameObject.FindGameObjectsWithTag("ball")[0];
         ballScript = ball.GetComponent<BallScript>();
     }
 	
