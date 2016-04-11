@@ -37,8 +37,11 @@ public class PlayerScript : MonoBehaviour {
 
     private bool switchPlayers = false;
 
+    public Vector3 startPos;
+
 	// Use this for initialization
 	void Start () {
+        startPos = transform.position;
         // Flip player to face correct direction at start of match
         if (!facingRight) {
             Flip();
