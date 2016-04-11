@@ -194,6 +194,10 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 6101132, guid: b5f94ac5f881b004390fbe0c6b364307,
     type: 2}
   m_PrefabInternal: {fileID: 763226718}
+--- !u!1 &185158742 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 104438, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+  m_PrefabInternal: {fileID: 197956825}
 --- !u!1001 &197956825
 Prefab:
   m_ObjectHideFlags: 0
@@ -816,6 +820,12 @@ MonoBehaviour:
   leftTeam: 1
   hScore: 0
   aScore: 0
+  entities:
+  - {fileID: 872656488}
+  - {fileID: 1147777648}
+  - {fileID: 1461051208}
+  - {fileID: 185158742}
+  - {fileID: 1797311078}
 --- !u!61 &690286333
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -985,6 +995,10 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 763226718}
   m_Script: {fileID: 11500000, guid: 59f8fa5565c009f439033d18f7085378, type: 3}
+--- !u!1 &872656488 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 104438, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+  m_PrefabInternal: {fileID: 763226718}
 --- !u!1 &949317975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,6 +1106,12 @@ MonoBehaviour:
   leftTeam: 0
   hScore: 0
   aScore: 0
+  entities:
+  - {fileID: 872656488}
+  - {fileID: 1147777648}
+  - {fileID: 1461051208}
+  - {fileID: 185158742}
+  - {fileID: 1797311078}
 --- !u!61 &949317980
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1181,6 +1201,10 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!1 &1147777648 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 104438, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+  m_PrefabInternal: {fileID: 2128967086}
 --- !u!1001 &1175492187
 Prefab:
   m_ObjectHideFlags: 0
@@ -1318,6 +1342,10 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1461051208 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 104438, guid: b5f94ac5f881b004390fbe0c6b364307, type: 2}
+  m_PrefabInternal: {fileID: 341947122}
 --- !u!1 &1577461793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1583,7 @@ MonoBehaviour:
   inPossession: 0
   followSpeed: 5
   playerInPossesion: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1905851107
 GameObject:
   m_ObjectHideFlags: 0
