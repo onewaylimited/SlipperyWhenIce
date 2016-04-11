@@ -10,10 +10,11 @@ public class BallScript : MonoBehaviour {
     public float followSpeed = 4;
     public PlayerScript playerInPossesion;
     private AudioSource source;
-
+    public Vector3 startPos;
 
 	// Use this for initialization
 	void Start () {
+        startPos = transform.position;
         source = GetComponent<AudioSource>();
 	}
 	
