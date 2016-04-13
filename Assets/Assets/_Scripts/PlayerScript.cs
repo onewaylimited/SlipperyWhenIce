@@ -50,6 +50,7 @@ public class PlayerScript : MonoBehaviour {
         goalDist = this.transform.position - goal.transform.position;
         ball = GameObject.FindGameObjectsWithTag("ball")[0];
         ballScript = ball.GetComponent<BallScript>();
+        setControl(controlling);
     }
 
     void FindGoal()
@@ -178,6 +179,10 @@ public class PlayerScript : MonoBehaviour {
     /// <param name="control"></param>
     public void setControl(bool control) {
         controlling = control;
+        GameObject disp = this.transform.Find("control_disp").gameObject;
+        if (disp != null) {
+            disp.GetComponent<Renderer>().enabled = control;
+        }
     }
 
     void FixedUpdate()
