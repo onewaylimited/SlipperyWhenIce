@@ -122,9 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f8fa5565c009f439033d18f7085378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: ' '
-  xSpeed: 5
-  ySpeed: 5
+  name: red_1
+  xSpeed: 3
+  ySpeed: 3
   xaxis: P1X
   yaxis: P1Y
   rxAxis: P1SX
@@ -143,13 +143,26 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   ballScript: {fileID: 0}
   otherPlayer: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: name
+      value: red_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: xSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ySpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104438}
