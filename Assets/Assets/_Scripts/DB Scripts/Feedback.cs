@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 /// <summary>
-/// Not using this class, might go back to it later though
+/// User to give feedback as a player tries to log in
 /// </summary>
 public class Feedback : MonoBehaviour {
     public Text feedbackString;

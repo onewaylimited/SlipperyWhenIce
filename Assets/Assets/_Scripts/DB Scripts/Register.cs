@@ -12,9 +12,9 @@ public class Register : MonoBehaviour {
         string name = usernameInput.text;
         string pass = passwordInput.text;
 
-        if(name.Length == 0) {
+        if (name.Length == 0) {
             Feedback.setFeedback("Enter a username");
-        } else if(pass.Length == 0) {
+        } else if (pass.Length == 0) {
             Feedback.setFeedback("Enter a password");
         } else {
             StartCoroutine(registerAccount(name, pass));
@@ -38,9 +38,11 @@ public class Register : MonoBehaviour {
             Debug.Log(download.text);
             Feedback.setFeedback(download.text);
 
-            if(download.text == "Account created") {
+            if (download.text == "Account created") {
                 Debug.Log("Created account successfully");
-                //loginButton.onClick.Invoke();
+
+                // Having one hell of a time logging in after registering
+                //Login.loginAccount(name, hashedPass);
             }
         }
     }
