@@ -4,19 +4,15 @@ using System.Collections;
 
 /*
  * Holds user account information so we
- * know who's logged indexer.
+ * know who's logged in.
  */
 public class UserAccount : MonoBehaviour {
-	private bool loggedIn = false;
+    private static bool loggedIn = false;
 
-	private int uID;
-	private string username;
+    public Text usernameText;
 
-    /// <summary>
-    /// This string gets changed on each successful login and is
-    /// used to validate the player.
-    /// </summary>
-    private string sessionCode;
+    private static string username;
+    private static string sessionCode;
 
     /// <summary>
     /// Records the instance of UserAccount that gets created.
@@ -32,36 +28,48 @@ public class UserAccount : MonoBehaviour {
         return instance;
     }
 
-	public int getUID() {
-		return uID;
-	}
+    public static string getUsername() {
+        return username;
+    }
 
-	public string getUsername() {
-		return username;
-	}
+    public static string getSessionCode() {
+        return sessionCode;
+    }
 
-	public string getSessionCode() {
-		return sessionCode;
-	}
+    public static bool isLoggedIn() {
+        return loggedIn;
+    }
 
-	public bool isLoggedIn() {
-		return loggedIn;
-	}
+    static GameObject LogInObject;
+    static GameObject LogOutObject;
+    private void Start() {
+        LogInObject = transform.GetChild(0).gameObject;
+        LogOutObject = transform.GetChild(1).gameObject;
+    }
 
-	GameObject LogIn;
-	GameObject LogOut;
-	private void Start() {
-		LogIn = transform.GetChild(0).gameObject;
-		LogOut = transform.GetChild(1).gameObject;
-	}
+    public void logIn(string name, string code) {
+        LogInObject.SetActive(false);
+        LogOutObject.SetActive(true);
 
-	public void logIn() {
-        LogIn.SetActive(false);
-        LogOut.SetActive(true);
-	}
+        username = name;
+        sessionCode = code;
+
+        loggedIn = true;
+
+        usernameText.text = "Hello: " + username;
+
+        UpdateStats.goal();
+        UpdateStats.game_win();
+        UpdateStats.game_lost();
+    }
 
     public void logOut() {
-        LogIn.SetActive(true);
-        LogOut.SetActive(false);
+        LogInObject.SetActive(true);
+        LogOutObject.SetActive(false);
+
+        username = "";
+        sessionCode = "";
+
+        loggedIn = false;
     }
 }

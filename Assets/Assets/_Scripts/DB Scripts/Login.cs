@@ -34,11 +34,16 @@ public class Login : MonoBehaviour {
         if (!string.IsNullOrEmpty(download.error)) {
             Debug.Log("Error: " + download.error);
             Feedback.setFeedback("Error"); // Don't want to attach download.error here, it's too long
-        } else if(download.text == "Invalid username/password") {
+        } else if (download.text == "Invalid username/password") {
             Debug.Log(download.text);
             Feedback.setFeedback(download.text);
-        } else if(download.text == "Success") {
-            Debug.Log("Logged in successfully");
+        } else if (download.text.StartsWith("Success:")) {
+            Debug.Log(download.text);
+
+            UserAccount.getInstance().logIn(name, download.text.Substring(9));
+        } else {
+            Debug.Log(download.text);
+            Debug.Log("Couldn't log in");
         }
     }
 }
