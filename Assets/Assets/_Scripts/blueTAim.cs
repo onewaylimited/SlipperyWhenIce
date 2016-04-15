@@ -9,6 +9,7 @@ public class blueTAim : MonoBehaviour
     public string yaxis = "P2Y";
     public Sprite sprite;
     GameObject px;
+    float mod = 2;
     public float dirX;
     public float dirY;
     public PlayerScript psript;
@@ -26,8 +27,8 @@ public class blueTAim : MonoBehaviour
 
 
 
-        dirX = Input.GetAxis(rxAxis);
-        dirY = Input.GetAxis(ryAxis);
+        dirX =mod * Input.GetAxis(rxAxis);
+        dirY = mod * Input.GetAxis(ryAxis);
         float pDirX = px.transform.position.x;
 
 

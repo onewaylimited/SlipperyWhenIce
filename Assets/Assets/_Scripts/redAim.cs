@@ -8,6 +8,7 @@ public class redAim : MonoBehaviour
     public string xaxis = "P1X";
     public string yaxis = "P1Y";
     public Sprite sprite;
+    float mod = 2;
     GameObject px;
     public float dirX;
      public float dirY;
@@ -26,8 +27,8 @@ public class redAim : MonoBehaviour
            
      
 
-             dirX = Input.GetAxis(rxAxis);
-             dirY = Input.GetAxis(ryAxis);
+             dirX = (Input.GetAxis(rxAxis))*mod;
+             dirY = (Input.GetAxis(ryAxis))*mod;
             float pDirX = px.transform.position.x;
 
 
