@@ -22,7 +22,9 @@ public class RinkScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    if(Input.GetKeyDown("escape")) {
+            Application.LoadLevel("Main Menu");  // Switch back to main menu
+        }
 	}
 
     void OnTriggerEnter2D(Collider2D coll) {
@@ -58,4 +60,5 @@ public class RinkScript : MonoBehaviour {
             audio.Play();
         }
     }
+
 }
