@@ -6,6 +6,6 @@ public class LoadOnClick : MonoBehaviour {
 
 	public void LoadScene(int level)
     {
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene("Main_Scene_ver8");
     }
 }
