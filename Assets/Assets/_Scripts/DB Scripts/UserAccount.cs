@@ -10,6 +10,7 @@ public class UserAccount : MonoBehaviour {
     private static bool loggedIn = false;
 
     public Text usernameText;
+    public GameObject userManager;
 
     private static string username;
     private static string sessionCode;
@@ -22,6 +23,8 @@ public class UserAccount : MonoBehaviour {
     public static UserAccount instance;
     private void Awake() {
         instance = this;
+
+        DontDestroyOnLoad(userManager);
     }
 
     public static UserAccount getInstance() {

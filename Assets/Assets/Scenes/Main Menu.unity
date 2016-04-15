@@ -2908,6 +2908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usernameText: {fileID: 1710767816}
+  userManager: {fileID: 1893152521}
 --- !u!1 &1962337298
 GameObject:
   m_ObjectHideFlags: 0
