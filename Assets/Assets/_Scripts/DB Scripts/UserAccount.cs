@@ -11,6 +11,8 @@ public class UserAccount : MonoBehaviour {
 
     public Text usernameText;
     public GameObject userManager;
+    public GameObject logInObject;
+    public GameObject logOutObject;
 
     private static string username;
     private static string sessionCode;
@@ -46,13 +48,13 @@ public class UserAccount : MonoBehaviour {
     static GameObject LogInObject;
     static GameObject LogOutObject;
     private void Start() {
-        LogInObject = transform.GetChild(0).gameObject;
-        LogOutObject = transform.GetChild(1).gameObject;
+        //LogInObject = transform.GetChild(0).gameObject;
+        //LogOutObject = transform.GetChild(1).gameObject;
     }
 
     public void logIn(string name, string code) {
-        LogInObject.SetActive(false);
-        LogOutObject.SetActive(true);
+        logInObject.SetActive(false);
+        logOutObject.SetActive(true);
 
         username = name;
         sessionCode = code;
@@ -61,14 +63,14 @@ public class UserAccount : MonoBehaviour {
 
         usernameText.text = "Hello: " + username;
 
-        UpdateStats.goal();
-        UpdateStats.game_win();
-        UpdateStats.game_lost();
+        //UpdateStats.goal();
+        //UpdateStats.game_win();
+        //UpdateStats.game_lost();
     }
 
     public void logOut() {
-        LogInObject.SetActive(true);
-        LogOutObject.SetActive(false);
+        logInObject.SetActive(true);
+        logOutObject.SetActive(false);
 
         username = "";
         sessionCode = "";

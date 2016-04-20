@@ -873,7 +873,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &731609699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,6 +1202,49 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 850356318}
+--- !u!1 &867452108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 867452110}
+  - 114: {fileID: 867452109}
+  m_Layer: 0
+  m_Name: UserAccountPersist
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &867452109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 867452108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffd28d3892082343b2ada9add7bed8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usernameText: {fileID: 1710767816}
+  userManager: {fileID: 867452108}
+  logInObject: {fileID: 776747776}
+  logOutObject: {fileID: 1830299847}
+--- !u!4 &867452110
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 867452108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 347.14847, y: 214.17902, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
 --- !u!1 &893339678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,7 +1314,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &933318688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,7 +1515,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1893152523}
+      - m_Target: {fileID: 0}
         m_MethodName: logOut
         m_Mode: 1
         m_Arguments:
@@ -1631,7 +1674,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!224 &1103395606
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1744,7 +1787,7 @@ RectTransform:
   - {fileID: 850356319}
   - {fileID: 1103395606}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2126,7 +2169,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2226,7 +2269,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1415709349
 GameObject:
   m_ObjectHideFlags: 0
@@ -2874,7 +2917,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 1103395606}
-  - 114: {fileID: 1893152523}
   - 114: {fileID: 1893152522}
   m_Layer: 5
   m_Name: UserAccount
@@ -2895,20 +2937,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936648afb2664684d81e6b582aa50279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1893152523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11429822, guid: e6940fbdbdfabbb4ba39d4c9e99dbb8d,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1893152521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bffd28d3892082343b2ada9add7bed8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  usernameText: {fileID: 1710767816}
-  userManager: {fileID: 1893152521}
 --- !u!1 &1962337298
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,31 +12,41 @@ public class UpdateStats : MonoBehaviour {
         return UserAccount.getSessionCode();
     }
 
-    public static void goal() {
-        WWWForm form = new WWWForm();
-        form.AddField("id", 1);
-        form.AddField("username", getUsername());
-        form.AddField("session", getSessionCode());
+    private static bool loggedIn() {
+        return UserAccount.isLoggedIn();
+    }
 
-        UserAccount.getInstance().StartCoroutine(updateAccount(form));
+    public static void goal() {
+        if (loggedIn()) {
+            WWWForm form = new WWWForm();
+            form.AddField("id", 1);
+            form.AddField("username", getUsername());
+            form.AddField("session", getSessionCode());
+
+            UserAccount.getInstance().StartCoroutine(updateAccount(form));
+        }
     }
 
     public static void game_win() {
-        WWWForm form = new WWWForm();
-        form.AddField("id", 2);
-        form.AddField("username", getUsername());
-        form.AddField("session", getSessionCode());
+        if (loggedIn()) {
+            WWWForm form = new WWWForm();
+            form.AddField("id", 2);
+            form.AddField("username", getUsername());
+            form.AddField("session", getSessionCode());
 
-        UserAccount.getInstance().StartCoroutine(updateAccount(form));
+            UserAccount.getInstance().StartCoroutine(updateAccount(form));
+        }
     }
 
     public static void game_lost() {
-        WWWForm form = new WWWForm();
-        form.AddField("id", 3);
-        form.AddField("username", getUsername());
-        form.AddField("session", getSessionCode());
+        if (loggedIn()) {
+            WWWForm form = new WWWForm();
+            form.AddField("id", 3);
+            form.AddField("username", getUsername());
+            form.AddField("session", getSessionCode());
 
-        UserAccount.getInstance().StartCoroutine(updateAccount(form));
+            UserAccount.getInstance().StartCoroutine(updateAccount(form));
+        }
     }
 
     private static IEnumerator updateAccount(WWWForm form) {
