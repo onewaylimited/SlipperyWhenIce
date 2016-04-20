@@ -9,7 +9,6 @@ public class blueAim : MonoBehaviour
     public string yaxis = "P2Y";
     public Sprite sprite;
     GameObject px;
-    float mod = 2;
     public float dirX;
     public float dirY;
     public PlayerScript psript;
@@ -27,8 +26,8 @@ public class blueAim : MonoBehaviour
 
 
 
-        dirX = mod * Input.GetAxis(rxAxis);
-        dirY = mod * Input.GetAxis(ryAxis);
+        dirX = Input.GetAxis(rxAxis);
+        dirY = Input.GetAxis(ryAxis);
         float pDirX = px.transform.position.x;
 
 
